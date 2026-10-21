@@ -1,3 +1,13 @@
+.button_row{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.button_row button{
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
 .counter {
   font-size: 16px;
   padding: 5px 10px;
