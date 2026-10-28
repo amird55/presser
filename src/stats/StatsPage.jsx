@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ColoredButton from "./ColoredButton.jsx";
 
 function StatsPage(props) {
     const [count, setCount] = useState(
@@ -53,6 +54,11 @@ function StatsPage(props) {
                     <td><button onClick={()=>{incCount("R")}}>R</button></td>
                     <td><button onClick={()=>{incCount("G")}}>G</button></td>
                     <td><button onClick={()=>{incCount("B")}}>B</button></td>
+                </tr>
+                <tr>
+                    <td><ColoredButton clr={"Red"} submitFunc={()=>{incCount("R")}} /></td>
+                    <td><ColoredButton clr={"Green"} submitFunc={()=>{incCount("G")}} /></td>
+                    <td><ColoredButton clr={"Blue"} submitFunc={()=>{incCount("B")}} /></td>
                 </tr>
             </table>
         </>
