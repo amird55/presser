@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ColoredButton from "./ColoredButton.jsx";
+import CounterShow from "./CounterShow.jsx";
 
 function StatsPage(props) {
     const [count, setCount] = useState(
@@ -39,6 +40,7 @@ function StatsPage(props) {
     }
     return (
         <>
+            <CounterShow cntr={count} />
             <table>
                 <tr>
                     <td>{count.R}</td>
