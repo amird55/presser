@@ -49,6 +49,11 @@ function StatsPage(props) {
                     <td><button onClick={incCountG}>G</button></td>
                     <td><button onClick={incCountB}>B</button></td>
                 </tr>
+                <tr>
+                    <td><button onClick={()=>{incCount("R")}}>R</button></td>
+                    <td><button onClick={()=>{incCount("G")}}>G</button></td>
+                    <td><button onClick={()=>{incCount("B")}}>B</button></td>
+                </tr>
             </table>
         </>
     );
