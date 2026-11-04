@@ -9,7 +9,7 @@ function CounterShow({cntr}) {
         <table>
             {sortedEntries.map(([clrName, cntVal]) => (
                 <tr key={clrName} style={{backgroundColor: clrName}}>
-                    <td>{cntVal}</td>
+                    <td className="boldNum">{cntVal}</td>
                 </tr>
             ))}
         </table>

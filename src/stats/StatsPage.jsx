@@ -7,7 +7,7 @@ function StatsPage(props) {
         {
             '#ff0000': 0,
             '#00ff00': 0,
-            '#0000ff': 0,
+            '#26A59E': 0,
             '#00ffff': 0,
             '#ffff00': 0,
         }
