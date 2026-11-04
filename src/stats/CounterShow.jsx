@@ -1,10 +1,13 @@
 import React from 'react';
 
 function CounterShow({cntr}) {
-    let sortedCntr = cntr.sort((a, b) => a[1] - b[1]);
+    let sortedCntr = Object.fromEntries(
+                        Object.entries(cntr).sort(([, a], [, b]) => b - a)
+    );
+    let sortedEntries = Object.entries(cntr).sort((a, b) => b[1] - a[1]);
     return (
         <table>
-            {Object.entries(sortedCntr).map(([clrName, cntVal]) => (
+            {sortedEntries.map(([clrName, cntVal]) => (
                 <tr key={clrName} style={{backgroundColor: clrName}}>
                     <td>{cntVal}</td>
                 </tr>
