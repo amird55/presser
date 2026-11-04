@@ -2,9 +2,9 @@ import React from 'react';
 
 function CounterShow({cntr}) {
     return (
-        <table style={{backgroundColor:"blue",color:"yellow" }}>
+        <table>
             {Object.entries(cntr).map(([clrName, cntVal]) => (
-                <tr key={clrName}>
+                <tr key={clrName} style={{backgroundColor: clrName}}>
                     <td>{clrName}</td>
                     <td>{cntVal}</td>
                 </tr>

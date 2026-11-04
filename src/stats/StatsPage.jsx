@@ -9,6 +9,7 @@ function StatsPage(props) {
             '#00ff00': 0,
             '#0000ff': 0,
             '#00ffff': 0,
+            '#ffff00': 0,
         }
     );
     const incCount = (clr)=>{
