@@ -5,9 +5,10 @@ import CounterShow from "./CounterShow.jsx";
 function StatsPage(props) {
     const [count, setCount] = useState(
         {
-            R: 0,
-            G: 0,
-            B: 0,
+            '#ff0000': 0,
+            '#00ff00': 0,
+            '#0000ff': 0,
+            '#00ffff': 0,
         }
     );
     const incCount = (clr)=>{
@@ -17,50 +18,16 @@ function StatsPage(props) {
         };
         setCount(c)
     }
-    const incCountR = ()=>{
-        let c = {
-            ...count,
-            R:count.R+1
-        };
-        setCount(c)
-    }
-    const incCountG = ()=>{
-        let c = {
-            ...count,
-            G:count.G+1
-        };
-        setCount(c)
-    }
-    const incCountB = ()=>{
-        let c = {
-            ...count,
-            B:count.B+1
-        };
-        setCount(c)
-    }
     return (
         <>
             <CounterShow cntr={count} />
             <table>
                 <tr>
-                    <td>{count.R}</td>
-                    <td>{count.G}</td>
-                    <td>{count.B}</td>
-                </tr>
-                <tr>
-                    <td><button onClick={incCountR}>R</button></td>
-                    <td><button onClick={incCountG}>G</button></td>
-                    <td><button onClick={incCountB}>B</button></td>
-                </tr>
-                <tr>
-                    <td><button onClick={()=>{incCount("R")}}>R</button></td>
-                    <td><button onClick={()=>{incCount("G")}}>G</button></td>
-                    <td><button onClick={()=>{incCount("B")}}>B</button></td>
-                </tr>
-                <tr>
-                    <td><ColoredButton clr={"Red"} submitFunc={()=>{incCount("R")}} /></td>
-                    <td><ColoredButton clr={"Green"} submitFunc={()=>{incCount("G")}} /></td>
-                    <td><ColoredButton clr={"Blue"} submitFunc={()=>{incCount("B")}} /></td>
+                    {Object.entries(count).map(([clr]) => (
+                        <td key={clr}>
+                            <ColoredButton clr={clr} submitFunc={()=>{incCount(clr)}} />
+                        </td>
+                    ))}
                 </tr>
             </table>
         </>
