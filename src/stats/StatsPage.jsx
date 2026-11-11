@@ -3,20 +3,22 @@ import ColoredButton from "./ColoredButton.jsx";
 import CounterShow from "./CounterShow.jsx";
 
 function StatsPage(props) {
-    const [count, setCount] = useState(
+    let initVals=localStorage.getItem('presser_counter');
+    initVals=initVals ? JSON.parse(initVals) :
         {
             '#ff0000': 0,
             '#00ff00': 0,
             '#26A59E': 0,
             '#00ffff': 0,
             '#ffff00': 0,
-        }
-    );
+        };
+    const [count, setCount] = useState(initVals);
     const incCount = (clr)=>{
         let c = {
             ...count,
             [clr]:count[clr]+1
         };
+        localStorage.setItem('presser_counter', JSON.stringify(c));
         setCount(c)
     }
     return (
